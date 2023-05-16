@@ -1,11 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import Buttons from './components/Buttons';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      
+      <Image style={styles.imagem} source={require('./assets/img/logo5.png')}/>
+      <Image style={styles.img} source={require('./assets/img/logoIdeia.png')}/>
+      <View>
+      <LinearGradient
+        // Background Linear Gradient
+        colors={['#046D1B', '#C2FF00']}
+        style={styles.background}
+      />
+      <LinearGradient
+        // Button Linear Gradient
+        colors={['#046D1B', '#C2FF00']}
+        style={styles.background}>
+          <Text></Text>
+      </LinearGradient>
+      <Buttons />
+      </View>
     </View>
   );
 }
@@ -13,8 +30,36 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    colors: '',
   },
+  div:{
+    width:'50%',
+    height: '50%',
+  },
+  oi:{
+    width: 210,
+    height: 60,
+    borderWidth: 2,
+    borderColor: '#000',
+    borderRadius: 15,
+
+  },
+  imagem:{
+    position: 'absolute',
+    top: 200,
+    height: 50,
+    width: '100%',
+    zIndex: 99,
+  },
+  background:{
+    height:'100%',
+  },
+  img:{
+    position: 'absolute',
+    bottom: '45%',
+    height: 240,
+    width: '100%',
+    zIndex: 99,
+  },
+
 });
