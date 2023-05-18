@@ -1,14 +1,19 @@
 import * as React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import Buttons from './components/Buttons';
-import bg from './assets/img/bg.png'
-import Home from './components/Home';
-import Routes from './Routes';
+import Buttons from './Buttons';
+import bg from './../assets/img/bg.png'
 
-export default function App() {
+export default function Home() {
   return (
-    <Routes />
+    <View style={styles.container}>
+      
+      <ImageBackground source={bg} resizeMode='cover' style={styles.bgStyle}>
+        <Buttons />
+      </ImageBackground>
+      
+      
+    </View>
   );
 }
 
